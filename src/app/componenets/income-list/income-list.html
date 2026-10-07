@@ -1,0 +1,70 @@
+<section class="expense-panel">
+  <div class="panel-heading">
+    <div>
+      <h2>Recent income</h2>
+    </div>
+
+    <div class="spent-bar">
+      <!-- TOTAL SPENT -->
+      <div class="bg">
+        <img class="wallet" src="/assets/wallet.png" />
+      </div>
+
+      <div class="spent-pill">
+        <span class="total">Total Income</span>
+
+        <strong class="spent"> ${{ incomeService.totalIncome() | number: '1.2-2' }} </strong>
+      </div>
+    </div>
+    <section class="income-panel">
+      <button
+        type="button"
+        class="income-toggle"
+        (click)="toggleIncome()"
+        [attr.aria-expanded]="showIncome()"
+      >
+        <span>Income ({{ incomeService.incomes().length }})</span>
+        <span class="chevron" [class.open]="showIncome()">▾</span>
+      </button>
+
+      @if (showIncome()) {
+        <div class="income-body">
+          @if (incomeService.incomes().length === 0) {
+            <div class="empty-state">
+              <h3>No Income yet</h3>
+              <h3>Add your first income to see it listed here.</h3>
+            </div>
+          } @else {
+            <div class="list-container">
+              <div class="list-header">
+                <p>Description</p>
+                <p>Source</p>
+                <p>Date</p>
+                <p>Amount</p>
+                <p></p>
+              </div>
+
+              @for (e of incomeService.incomes(); track e.id) {
+                <article class="expense-row">
+                  <div class="description-cell">
+                    <span class="category-dot">{{ e.source.slice(0, 1) }}</span>
+                    <div>
+                      <strong>{{ e.description || 'Untitled expense' }}</strong>
+                    </div>
+                  </div>
+
+                  <span class="category-pill">{{ e.source }}</span>
+                  <time>{{ e.date | date: 'MMM d, y' }}</time>
+                  <strong class="amount">+${{ e.amount | number: '1.2-2' }}</strong>
+                  <button class="btn" type="button" (click)="incomeService.deleteIncome(e.id)">
+                    Delete
+                  </button>
+                </article>
+              }
+            </div>
+          }
+        </div>
+      }
+    </section>
+  </div>
+</section>

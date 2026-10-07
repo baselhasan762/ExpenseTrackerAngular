@@ -1,0 +1,55 @@
+/* expense-item.component.css */
+.expense-item {
+  border-bottom: 1px solid #eee;
+  padding: 10px 0;
+}
+
+.view-row,
+.edit-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.description {
+  flex: 2;
+}
+
+.category {
+  flex: 1;
+  color: #666;
+}
+
+.date {
+  flex: 1;
+  color: #999;
+  font-size: 0.85rem;
+}
+
+.amount {
+  flex: 1;
+  font-weight: bold;
+  text-align: right;
+}
+
+.actions {
+  display: flex;
+  gap: 6px;
+}
+
+.actions button {
+  padding: 4px 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.delete-btn {
+  background: #d32f2f;
+  color: white;
+}
+
+.edit-row input,
+.edit-row select {
+  padding: 4px;
+}

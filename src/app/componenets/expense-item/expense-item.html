@@ -1,0 +1,35 @@
+<!-- expense-item.component.html -->
+<div class="expense-item">
+  @if (!isEdititng) {
+    <!-- Display mode -->
+    <div class="view-row">
+      <span class="description">{{ expense().description }}</span>
+      <span class="category">{{ expense().category }}</span>
+      <span class="date">{{ expense().date }}</span>
+      <span class="amount">{{ expense().amount | number: '1.2-2' }}</span>
+      <div class="actions">
+        <button (click)="startEdit()">Edit</button>
+        <button (click)="deleteExpense()" class="delete-btn">Delete</button>
+      </div>
+    </div>
+  } @else {
+    <!-- Edit mode -->
+    <form [formGroup]="editForm" (ngSubmit)="saveEdit()" class="edit-row">
+      <input type="number" step="0.01" formControlName="amount" />
+
+      <select formControlName="category">
+        @for (cat of categories; track cat) {
+          <option [value]="cat">{{ cat }}</option>
+        }
+      </select>
+
+      <input type="date" formControlName="date" />
+      <input type="text" formControlName="description" />
+
+      <div class="actions">
+        <button type="submit">Save</button>
+        <button type="button" (click)="cancelEdit()">Cancel</button>
+      </div>
+    </form>
+  }
+</div>

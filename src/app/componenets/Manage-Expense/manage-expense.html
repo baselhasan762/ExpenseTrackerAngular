@@ -1,0 +1,39 @@
+<div class="action-cards">
+  <button class="action-card income" (click)="openModal.set('income')">
+    <div class="circle-income"><span class="icon">+</span></div>
+    <div class="text">
+      <strong>Add Income</strong>
+      <span>Record money you receive</span>
+    </div>
+    <span class="arrow">→</span>
+  </button>
+
+  <button class="action-card expense" (click)="openModal.set('expense')">
+    <div class="circle-expense"><span class="minus">−</span></div>
+    <div class="text">
+      <strong>Add Expense</strong>
+      <span>Track your spending</span>
+    </div>
+    <span class="arrow">→</span>
+  </button>
+</div>
+
+<!-- <button class="modal-close" (click)="openModal.set(null)">✕</button> -->
+
+@if (openModal()) {
+  <div class="modal-overlay" (click)="openModal.set(null)">
+    <div class="modal-content" (click)="$event.stopPropagation()">
+      @if (openModal() === 'income') {
+        <app-income-form
+          (saved)="openModal.set(null)"
+          (closed)="openModal.set(null)"
+        ></app-income-form>
+      } @else {
+        <app-expense-form
+          (saved)="openModal.set(null)"
+          (closed)="openModal.set(null)"
+        ></app-expense-form>
+      }
+    </div>
+  </div>
+}

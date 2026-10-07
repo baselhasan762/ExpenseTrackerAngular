@@ -1,0 +1,270 @@
+:host {
+  display: block;
+}
+
+p {
+  color: #909294;
+}
+.form-card {
+  width: 400px;
+  max-width: calc(100vw - 32px);
+  min-height: 500px;
+  box-sizing: border-box;
+  background: #ffffff;
+  border-radius: 11px;
+
+  padding: 18px 20px 13px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+
+  font-family: 'Archivo Black', sans-serif;
+}
+
+.expense-label {
+  width: fit-content;
+
+  background: #171a1d;
+  color: #ffffff;
+
+  padding: 3px 9px;
+  border-radius: 999px;
+
+  font-size: 8px;
+  font-weight: 700;
+  line-height: 1;
+
+  letter-spacing: 0.2px;
+
+  margin-bottom: -4px;
+}
+
+.expense-label label {
+  color: inherit !important;
+  font-size: inherit !important;
+  font-weight: inherit !important;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.field > label {
+  font-size: 10px;
+  font-weight: 600;
+  line-height: 1.2;
+
+  color: #17191c;
+}
+
+.field input,
+.field select {
+  width: 100%;
+  height: 30px;
+
+  box-sizing: border-box;
+
+  padding: 0 11px;
+
+  background: #f9fafb;
+
+  border: 1px solid #dfe3e8;
+  border-radius: 7px;
+
+  color: #25282c;
+
+  font-family: 'Archivo Black', sans-serif;
+  font-size: 9px;
+
+  transition:
+    border-color 0.15s ease,
+    box-shadow 0.15s ease,
+    background 0.15s ease;
+}
+
+.field input::placeholder {
+  color: #a1a9b3;
+  opacity: 1;
+}
+
+.field select {
+  appearance: none;
+  cursor: pointer;
+
+  color: #9ba3ad;
+
+  padding-right: 28px;
+
+  background-image:
+    linear-gradient(45deg, transparent 50%, #737b85 50%),
+    linear-gradient(135deg, #737b85 50%, transparent 50%);
+
+  background-position:
+    calc(100% - 13px) 50%,
+    calc(100% - 9px) 50%;
+
+  background-size:
+    4px 4px,
+    4px 4px;
+
+  background-repeat: no-repeat;
+}
+
+/* Focus */
+
+.field input:focus,
+.field select:focus {
+  outline: none;
+
+  background: #ffffff;
+
+  border-color: #b9c0c8;
+
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.04);
+}
+
+.field input[type='date'] {
+  color: #9ba3ad;
+}
+
+.field input[type='date']::-webkit-calendar-picker-indicator {
+  opacity: 0.65;
+  cursor: pointer;
+}
+
+#description {
+  height: 48px;
+
+  padding-top: 9px;
+  padding-bottom: 9px;
+
+  resize: vertical;
+}
+
+.error {
+  color: #dc2626 !important;
+
+  font-size: 9px;
+
+  min-height: 0;
+  visibility: hidden;
+  margin-top: -2px;
+}
+
+.error.visible {
+  visibility: visible;
+}
+
+.form-card > div:last-child {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.form-card {
+  position: relative;
+}
+
+.modal-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+/* =========================
+   ADD EXPENSE BUTTON
+   ========================= */
+
+button[type='submit'] {
+  width: 100%;
+  min-width: 0;
+
+  height: 31px;
+
+  padding: 0 14px;
+
+  background: #171a1d;
+  color: #ffffff;
+
+  border: none;
+  border-radius: 7px;
+
+  font-family: inherit;
+  font-size: 10px;
+  font-weight: 500;
+
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition:
+    background-color 0.15s ease,
+    transform 0.15s ease;
+}
+
+button[type='submit']:hover {
+  background: #292d31;
+}
+
+button[type='submit']:active {
+  transform: scale(0.99);
+}
+
+@media (max-width: 480px) {
+  .form-card {
+    padding: 20px 16px 16px;
+    gap: 14px;
+    min-height: 0;
+  }
+
+  .expense-label {
+    font-size: 10px;
+    padding: 4px 11px;
+  }
+
+  .field > label {
+    font-size: 13px;
+  }
+
+  .field input,
+  .field select {
+    height: 44px;
+    font-size: 16px;
+    padding: 0 12px;
+  }
+
+  .field select {
+    padding-right: 32px;
+  }
+
+  #description {
+    height: 72px;
+  }
+
+  button[type='submit'] {
+    height: 46px;
+    font-size: 14px;
+  }
+
+  .error {
+    font-size: 12px;
+  }
+
+  .modal-close {
+    width: 40px;
+    height: 40px;
+    top: 10px;
+    right: 10px;
+  }
+}

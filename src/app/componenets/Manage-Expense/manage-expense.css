@@ -1,0 +1,141 @@
+/* income-form.component.css — reuse the same look as expense-form */
+
+.action-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.action-card {
+  height: 120px;
+
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 18px 20px;
+  border-radius: 10px;
+  border: 1px solid black;
+  background: var(--card-bg);
+  cursor: pointer;
+  font-family: sans-serif;
+  text-align: left;
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+.action-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
+}
+
+.action-card .icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #362a2a;
+  flex-shrink: 0;
+}
+.minus {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #f9f5f5;
+  flex-shrink: 0;
+}
+
+.action-card.income {
+  background: var(--income-soft);
+}
+.action-card.income {
+  background: var(--income);
+}
+
+.action-card.expense {
+  background: var(--text);
+}
+
+.action-card .text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.action-card .text strong {
+  font-size: 0.95rem;
+}
+
+.action-card .text span {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.action-card .arrow {
+  color: var(--text-muted);
+}
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.1); /* optional faint tint, see below */
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(8px); /* Safari needs the prefix */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 50;
+  padding: 20px;
+}
+
+.modal-content {
+  background: none;
+  border: none;
+  box-shadow: none;
+  padding: 0;
+  border-radius: 0;
+  backdrop-filter: none;
+  width: fit-content
+  max-width 100%;
+}
+
+.modal-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: none;
+  border: none;
+  font-size: 1.1rem;
+  cursor: pointer;
+  color: var(--text-muted);
+}
+
+.circle-income {
+  width: 60px;
+  height: 60px;
+  background-color: rgb(161, 238, 149);
+  border-radius: 99px;
+}
+.circle-expense {
+  width: 60px;
+  height: 60px;
+  background-color: rgb(9, 9, 9);
+  border-radius: 99px;
+}
+
+strong {
+  font-family: 'Archivo Black', sans-serif;
+}
+span {
+  font-family: 'Archivo Black', sans-serif;
+  color: darkgrey;
+}

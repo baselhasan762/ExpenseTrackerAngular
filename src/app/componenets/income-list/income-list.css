@@ -1,0 +1,443 @@
+.list-container {
+  --cols: 2fr 2fr 2fr 1fr 90px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+}
+.list-header,
+.expense-row {
+  display: grid;
+  grid-template-columns: var(--cols);
+  align-items: center;
+  padding: 12px 18px;
+  font-family: 'Archivo Black', sans-serif;
+}
+.expense-row {
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+  margin-bottom: 8px;
+}
+
+.list {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  align-items: center;
+  padding: 12px 18px;
+}
+
+.list-header {
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: #374151;
+  font-family: 'Archivo Black', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+  margin-bottom: 8px;
+}
+
+.list-header p:nth-child(2),
+.list-header p:nth-child(3),
+.expense-row > :nth-child(2),
+.expense-row > :nth-child(3) {
+  text-align: center;
+}
+
+/* .list {
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+  margin-bottom: 8px;
+} */
+
+.btn {
+  justify-self: end;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 6px;
+  background: #fef2f2;
+  color: var(--danger);
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* .category-dot {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  color: chartreuse;
+} */
+
+.description-cell {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.description-cell div {
+  display: flex;
+  flex-direction: column;
+  font-family: 'Archivo Black', sans-serif;
+}
+
+.category-dot {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: #bbf7d0;
+  font-weight: 700;
+}
+
+h2,
+p,
+span,
+label,
+strong {
+  font-family: 'Archivo Black', sans-serif;
+}
+
+h2 {
+  font-family: 'Archivo Black', sans-serif;
+  font-size: 40px;
+  font-weight: 900;
+  transform: scaleX(1.15);
+  transform-origin: left;
+  letter-spacing: -2px;
+  transform: scaleX(1.2);
+}
+
+.category-pill {
+  padding: 4px;
+  border-radius: 6px;
+  font-family: sans-serif;
+}
+
+time {
+  font-family: sans-serif;
+}
+.spent-bar {
+  width: 100%;
+  min-height: 120px;
+
+  display: grid;
+  grid-template-columns: 70px 1fr 1.6fr;
+
+  align-items: center;
+
+  background: linear-gradient(15deg, #9cee50, #aee779);
+  border-radius: 10px;
+
+  overflow: hidden;
+
+  font-family: 'Archivo Black', sans-serif;
+}
+
+/* WALLET */
+
+.bg {
+  width: 50px;
+  height: 50px;
+
+  margin: 0 auto;
+
+  background-color: #050906;
+
+  border-radius: 10px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wallet {
+  width: 30px;
+  height: 30px;
+  filter: invert(1);
+}
+
+/* TOTAL SPENT */
+
+.spent-pill {
+  height: auto;
+  margin: 0;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.total {
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.spent {
+  margin-top: 4px;
+
+  font-size: clamp(1.75rem, 6vw, 2.5rem);
+  font-weight: 700;
+  line-height: 1;
+}
+
+/* DARK ANALYTICS */
+
+.analytics-bar {
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+
+  background-color: #142217;
+  color: white;
+
+  font-family: 'Archivo Black', sans-serif;
+}
+
+/* TOTAL TRANSACTIONS */
+
+.total-transactions {
+  position: relative;
+
+  flex: 1;
+  height: 70px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 14px;
+
+  padding: 0 30px;
+}
+
+/* DIVIDER */
+
+.total-transactions::after {
+  content: '';
+
+  position: absolute;
+
+  right: 0;
+  top: 50%;
+
+  width: 1px;
+  height: 45px;
+
+  transform: translateY(-50%);
+
+  background-color: rgba(255, 255, 255, 0.25);
+}
+
+/* AVERAGE */
+
+.average {
+  flex: 1;
+
+  height: 70px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 14px;
+
+  padding: 0 30px;
+}
+
+.average-tran {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  gap: 2px;
+
+  margin: 0;
+}
+
+/* ICON CIRCLES */
+
+.blackbg {
+  width: 44px;
+  height: 44px;
+
+  flex-shrink: 0;
+
+  background-color: #202b24;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 50%;
+}
+
+.graph {
+  width: 20px;
+  height: 20px;
+  filter: invert(1);
+}
+
+.transaction-icon {
+  width: 20px;
+  height: 20px;
+  filter: invert(1);
+}
+/* TEXT */
+
+.total-transactions span,
+.average-tran span {
+  font-family: Arial, sans-serif;
+
+  font-size: 12px;
+
+  color: #c5cec8;
+
+  white-space: nowrap;
+}
+
+.total-transactions strong,
+.average-tran strong {
+  margin-top: 4px;
+
+  font-family: 'Archivo Black', sans-serif;
+
+  font-size: 18px;
+
+  color: white;
+}
+
+/* ---------- Tablet (≤ 900px) ---------- */
+@media (max-width: 900px) {
+  .list-container {
+    --cols: 2fr 1.5fr 1.5fr 1fr 80px;
+  }
+
+  .list-header,
+  .expense-row {
+    padding: 12px 14px;
+  }
+
+  .list-header {
+    font-size: 0.75rem;
+  }
+
+  /* Summary bar: wallet + total on top, stats full width below */
+  .spent-bar {
+    grid-template-columns: 70px 1fr;
+    padding-top: 16px;
+  }
+
+  .analytics-bar {
+    grid-column: 1 / -1;
+    margin-top: 16px;
+    height: auto;
+    padding: 8px 0;
+  }
+
+  .total-transactions,
+  .average {
+    height: auto;
+    padding: 12px 20px;
+  }
+}
+
+/* ---------- Phone (≤ 640px) ---------- */
+@media (max-width: 640px) {
+  .list-header {
+    display: none;
+  }
+
+  .expense-row {
+    grid-template-columns: auto 1fr auto;
+    grid-template-areas:
+      'desc desc amount'
+      'cat  date btn';
+    row-gap: 10px;
+    padding: 12px 14px;
+  }
+
+  .description-cell {
+    grid-area: desc;
+    min-width: 0;
+  }
+
+  .description-cell div {
+    min-width: 0;
+  }
+
+  .description-cell strong {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .expense-row > :nth-child(2) {
+    grid-area: cat;
+    justify-self: start;
+    text-align: left;
+  }
+
+  .expense-row > :nth-child(3) {
+    grid-area: date;
+    text-align: left;
+    padding-left: 10px;
+    font-size: 0.85rem;
+  }
+
+  .expense-row .amount {
+    grid-area: amount;
+    text-align: right;
+  }
+
+  .expense-row .btn {
+    grid-area: btn;
+    padding: 8px 14px;
+  }
+}
+.income-panel {
+  background: #fff;
+  border-radius: 12px;
+  border: 1px solid #eef0f4;
+  margin-bottom: 16px;
+  overflow: hidden;
+}
+
+.income-toggle {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 18px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: 'Archivo Black', sans-serif;
+  font-size: 1rem;
+}
+
+.chevron {
+  transition: transform 0.2s ease;
+}
+
+.chevron.open {
+  transform: rotate(180deg);
+}
+
+.income-body {
+  padding: 0 18px 14px;
+}
+
+/* ---------- Small phone (≤ 480px) ---------- */
+@media (max-width: 480px) {
+  .spent-bar {
+    grid-template-columns: 60px 1fr;
+  }
+
+  .bg {
+    width: 44px;
+    height: 44px;
+  }
+}

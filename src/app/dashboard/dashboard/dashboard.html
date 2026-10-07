@@ -1,0 +1,53 @@
+<!-- dashboard.component.html -->
+<div class="dashboard">
+  <div class="summary-card-spent">
+    <div>
+      <h2>Total Spent</h2>
+      <p class="total">{{ expensesService.totalSpent() }}</p>
+    </div>
+
+    <img src="/assets/wallet.png" />
+  </div>
+  <div class="summary-card-income">
+    <div>
+      <h2>Total Income</h2>
+      <p class="total">{{ balance() }}</p>
+    </div>
+    <img class="white-wallet" src="/assets/wallet.png" />
+  </div>
+</div>
+<div class="breakdown">
+  <h3>By Category</h3>
+  @if (categoryBreakdown().length === 0) {
+    <p>No expenses yet.</p>
+  } @else {
+    @for (item of categoryBreakdown(); track item.category) {
+      <div class="category-row">
+        @if (item.category == 'Food') {
+          <div class="icon-circle"><img src="/assets/cutlery.png" class="logo" /></div>
+        } @else if (item.category == 'Entertainment') {
+          <div class="icon-circle"><img src="/assets/television.png" class="logo" /></div>
+        } @else if (item.category == 'Other') {
+          <div class="icon-circle"><img src="/assets/application.png" class="logo" /></div>
+        } @else if (item.category == 'Utilities') {
+          <div class="icon-circle"><img src="/assets/tools.png" class="logo" /></div>
+        } @else if (item.category == 'Transport') {
+          <div class="icon-circle"><img src="/assets/bus.png" class="logo" /></div>
+        } @else if (item.category == 'Other') {
+          <div class="icon-circle"><img src="/assets/application.png" class="logo" /></div>
+        }
+        <div class="category-style">
+          <span>{{ item.category }}</span>
+
+          <span>{{ item.amount }}</span>
+        </div>
+        <div class="progress-item">
+          <span class="percent-label">{{ item.percentage }}%</span>
+          <div class="progress-track">
+            <div class="progress-fill" [style.width.%]="item.percentage"></div>
+          </div>
+        </div>
+      </div>
+    }
+  }
+</div>
