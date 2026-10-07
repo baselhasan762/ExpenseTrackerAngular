@@ -90,6 +90,10 @@ img {
   flex-shrink: 0; /* keeps the image from being squashed */
 }
 @media (max-width: 640px) {
+  h1,
+  h2 {
+    transform: none;
+  }
   .app-shell {
     padding: 20px 14px 60px;
     gap: 16px;
