@@ -32,3 +32,11 @@ h1 {
 h2 {
   font-size: clamp(1.25rem, 3vw, 1.75rem);
 }
+
+button {
+  color: inherit;
+  font: inherit;
+  -webkit-appearance: none;
+  appearance: none;
+  -webkit-tap-highlight-color: transparent;
+}
