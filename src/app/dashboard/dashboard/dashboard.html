@@ -3,7 +3,7 @@
   <div class="summary-card-spent">
     <div>
       <h2>Total Spent</h2>
-      <p class="total">{{ expensesService.totalSpent() }}</p>
+      <p class="total">${{ expensesService.totalSpent() | number: '1.2-2' }}</p>
     </div>
 
     <img src="/assets/wallet.png" />
@@ -11,7 +11,7 @@
   <div class="summary-card-income">
     <div>
       <h2>Total Income</h2>
-      <p class="total">{{ balance() }}</p>
+      <p class="total">${{ balance() | number: '1.2-2' }}</p>
     </div>
     <img class="white-wallet" src="/assets/wallet.png" />
   </div>
