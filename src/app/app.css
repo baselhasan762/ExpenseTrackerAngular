@@ -1,4 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+p {
+  font-family: 'Archivo Black', sans-serif;
+}
 html,
 body {
   margin: 0;
@@ -15,20 +24,20 @@ app-root {
 }
 h1 {
   font-family: 'Archivo Black', sans-serif;
-  font-size: 40px;
+  font-size: clamp(1.8rem, 7vw, 2.5rem);
   font-weight: 900;
+  letter-spacing: -1px;
   transform: scaleX(1.15);
   transform-origin: left;
-  letter-spacing: -2px;
-  transform: scaleX(1.2);
 }
 
 h3 {
 }
 img {
-  height: 200px;
-  width: 300px;
+  max-width: 100%;
+  height: auto;
 }
+
 .app-shell {
   max-width: 1100px;
   margin: 0 auto;
@@ -40,11 +49,11 @@ img {
 
 .app-header {
   display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
 }
-p {
-  font-family: 'Archivo Black', sans-serif;
-  opacity: 50%;
-}
+
 .section-title {
   font-size: 1.1rem;
   font-weight: 600;
@@ -62,8 +71,37 @@ p {
   flex-direction: column;
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+.app-header img {
+  width: min(300px, 100%);
+  height: auto;
+}
+.app-header p {
+  opacity: 0.5;
+}
+
+.app-header > div {
+  flex: 1;
+  min-width: 0; /* lets the text shrink and wrap instead of pushing the image */
+}
+
+.app-header img {
+  width: min(300px, 100%);
+  height: auto;
+  flex-shrink: 0; /* keeps the image from being squashed */
+}
+@media (max-width: 640px) {
+  .app-shell {
+    padding: 20px 14px 60px;
+    gap: 16px;
+  }
+
+  .app-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .app-header img {
+    width: 200px;
+    align-self: center;
+  }
 }
