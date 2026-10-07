@@ -8,7 +8,7 @@
 
 .action-card {
   min-height: 120px;
-
+  line-height: 1;
   display: flex;
   align-items: center;
   gap: 14px;
@@ -40,6 +40,7 @@
   font-weight: 700;
   color: #362a2a;
   flex-shrink: 0;
+  line-height: 1;
 }
 .minus {
   width: 60px;
@@ -52,6 +53,7 @@
   font-weight: 700;
   color: #f9f5f5;
   flex-shrink: 0;
+  line-height: 1;
 }
 
 .action-card.income {
@@ -74,6 +76,7 @@
 }
 
 .action-card .text span {
+  font-family: 'Archivo Black', sans-serif;
   font-size: 0.8rem;
   color: var(--text-muted);
 }
@@ -103,19 +106,23 @@
   backdrop-filter: none;
   width: fit-content;
   max-width: 100%;
+  margin: auto;
 }
-
-.circle-income {
-  width: 60px;
-  height: 60px;
-  background-color: rgb(161, 238, 149);
-  border-radius: 99px;
-}
+.circle-income,
 .circle-expense {
   width: 60px;
   height: 60px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+}
+
+.circle-income {
+  background-color: rgb(161, 238, 149);
+}
+.circle-expense {
   background-color: rgb(9, 9, 9);
-  border-radius: 99px;
 }
 
 strong {
@@ -132,6 +139,8 @@ strong {
     padding: 14px 16px;
   }
 
+  .circle-income,
+  .circle-expense,
   .action-card .icon,
   .minus {
     width: 48px;

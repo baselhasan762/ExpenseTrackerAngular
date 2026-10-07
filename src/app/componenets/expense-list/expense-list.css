@@ -105,10 +105,9 @@ h2 {
   font-family: 'Archivo Black', sans-serif;
   font-size: 40px;
   font-weight: 900;
-  transform: scaleX(1.15);
+  transform: scaleX(1);
   transform-origin: left;
   letter-spacing: -2px;
-  transform: scaleX(1.2);
 }
 
 .category-pill {
