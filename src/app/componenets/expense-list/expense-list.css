@@ -105,7 +105,7 @@ h2 {
   font-family: 'Archivo Black', sans-serif;
   font-size: 40px;
   font-weight: 900;
-  transform: scaleX(1);
+  transform: scaleX(1.15);
   transform-origin: left;
   letter-spacing: -2px;
 }
@@ -345,6 +345,10 @@ time {
 
 /* ---------- Phone (≤ 640px) ---------- */
 @media (max-width: 640px) {
+  h1,
+  h2 {
+    transform: none;
+  }
   .list-header {
     display: none;
   }

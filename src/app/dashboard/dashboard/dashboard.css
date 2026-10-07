@@ -196,6 +196,10 @@ span {
     sans-serif;
 }
 @media (max-width: 640px) {
+  h1,
+  h2 {
+    transform: none;
+  }
   .summary-card-income,
   .summary-card-spent {
     padding: 18px;
